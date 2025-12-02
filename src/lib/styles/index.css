@@ -1,3 +1,15 @@
 @import url('./tokens/colors.css');
 @import url('./tokens/fonts.css');
 @import url('./tokens/shadows.css');
+@import url('./tokens/global.css');
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: var(--svant-font-family-base);
+	font-size: var(--svant-global-font-size);
+	line-height: var(--svant-line-height-base);
+}

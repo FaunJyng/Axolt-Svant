@@ -1,0 +1,446 @@
+/* Global: background & container */
+:root {
+	--svant-bg-color-general: rgba(255, 255, 255, 0.97);
+
+	--svant-text-color-general-black: rgba(0, 0, 0, 0.97);
+	--svant-text-color-general-black-hover: rgba(0, 0, 0, 0.96);
+	--svant-text-color-general-black-active: rgba(0, 0, 0, 0.97);
+
+	--svant-text-color-general-white: rgba(255, 255, 255, 0.97);
+	--svant-text-color-general-white-hover: rgba(255, 255, 255, 0.96);
+	--svant-text-color-general-white-active: rgba(255, 255, 255, 0.97);
+
+	--svant-text-color-general-theme: var(--svant-text-color-general-black);
+	--svant-text-color-general-theme-hover: var(--svant-text-color-general-black-hover);
+	--svant-text-color-general-theme-active: var(--svant-text-color-general-black-active);
+
+	--svant-heading-color-black: rgba(0, 0, 0, 0.9);
+	--svant-heading-color-white: rgba(255, 255, 255, 0.9);
+
+	/* Global: separator */
+	--svant-separator-color-black: rgba(5, 5, 5, 0.06);
+	--svant-separator-color-white: rgba(253, 253, 253, 0.13);
+
+	/* Global: default colors */
+	--svant-text-color-default: var(--svant-text-color-general-black);
+	--svant-text-color-default-hover: var(--svant-blue-6);
+	--svant-text-color-default-active: var(--svant-blue-7);
+
+	--svant-border-color-default: rgba(0, 0, 0, 0.255);
+	--svant-border-color-default-hover: var(--svant-blue-6);
+	--svant-border-color-default-active: var(--svant-blue-7);
+
+	--svant-bg-color-default: rgba(0, 0, 0, 0.04);
+	--svant-bg-color-default-hover: rgba(0, 0, 0, 0.1);
+	--svant-bg-color-default-active: rgba(0, 0, 0, 0.14);
+
+	--svant-solid-bg-color-default: rgba(0, 0, 0, 1);
+	--svant-solid-bg-color-default-hover: var(--svant-gray-10);
+	--svant-solid-bg-color-default-active: rgba(0, 0, 0, 1);
+
+	--svant-shadow-color-default: var(--svant-gray-shadow);
+	--svant-shadow-color-default-hover: var(--svant-blue-shadow);
+	--svant-shadow-color-default-active: var(--svant-blue-shadow);
+
+	--svant-wave-color-default: var(--svant-blue-6);
+
+	/* Global: primary colors */
+	--svant-text-color-primary: var(--svant-blue-6);
+	--svant-text-color-primary-hover: var(--svant-blue-5);
+	--svant-text-color-primary-active: var(--svant-blue-7);
+
+	--svant-border-color-primary: var(--svant-blue-6);
+	--svant-border-color-primary-hover: var(--svant-blue-5);
+	--svant-border-color-primary-active: var(--svant-blue-7);
+
+	--svant-bg-color-primary: var(--svant-blue-1);
+	--svant-bg-color-primary-hover: var(--svant-blue-2);
+	--svant-bg-color-primary-active: var(--svant-blue-3);
+
+	--svant-solid-bg-color-primary: var(--svant-blue-6);
+	--svant-solid-bg-color-primary-hover: var(--svant-blue-5);
+	--svant-solid-bg-color-primary-active: var(--svant-blue-7);
+
+	--svant-shadow-color-primary: var(--svant-blue-shadow);
+	--svant-shadow-color-primary-hover: var(--svant-blue-shadow);
+	--svant-shadow-color-primary-active: var(--svant-blue-shadow);
+
+	--svant-wave-color-primary: var(--svant-blue-6);
+
+	/* Global: danger colors */
+	--svant-text-color-danger: var(--svant-red-5);
+	--svant-text-color-danger-hover: var(--svant-red-4);
+	--svant-text-color-danger-active: var(--svant-red-6);
+
+	--svant-border-color-danger: var(--svant-red-5);
+	--svant-border-color-danger-hover: var(--svant-red-4);
+	--svant-border-color-danger-active: var(--svant-red-6);
+
+	--svant-bg-color-danger: var(--svant-red-1);
+	--svant-bg-color-danger-hover: var(--svant-red-2);
+	--svant-bg-color-danger-active: var(--svant-red-3);
+
+	--svant-solid-bg-color-danger: var(--svant-red-5);
+	--svant-solid-bg-color-danger-hover: var(--svant-red-4);
+	--svant-solid-bg-color-danger-active: var(--svant-red-6);
+
+	--svant-shadow-color-danger: var(--svant-red-shadow);
+	--svant-shadow-color-danger-hover: var(--svant-red-shadow);
+	--svant-shadow-color-danger-active: var(--svant-red-shadow);
+
+	--svant-wave-color-danger: var(--svant-red-5);
+
+	/* Global: warning colors */
+	--svant-text-color-warning: var(--svant-gold-6);
+	--svant-text-color-warning-hover: var(--svant-gold-5);
+	--svant-text-color-warning-active: var(--svant-gold-7);
+
+	--svant-border-color-warning: var(--svant-gold-6);
+	--svant-border-color-warning-hover: var(--svant-gold-5);
+	--svant-border-color-warning-active: var(--svant-gold-7);
+
+	--svant-bg-color-warning: var(--svant-gold-1);
+	--svant-bg-color-warning-hover: var(--svant-gold-2);
+	--svant-bg-color-warning-active: var(--svant-gold-3);
+
+	--svant-solid-bg-color-warning: var(--svant-gold-6);
+	--svant-solid-bg-color-warning-hover: var(--svant-gold-5);
+	--svant-solid-bg-color-warning-active: var(--svant-gold-7);
+
+	--svant-shadow-color-warning: var(--svant-gold-shadow);
+	--svant-shadow-color-warning-hover: var(--svant-gold-shadow);
+	--svant-shadow-color-warning-active: var(--svant-gold-shadow);
+
+	--svant-wave-color-warning: var(--svant-gold-6);
+
+	/* Global: success colors */
+
+	/* Global: link colors */
+	--svant-text-color-link: var(--svant-blue-6);
+	--svant-text-color-link-hover: var(--svant-blue-5);
+	--svant-text-color-link-active: var(--svant-blue-7);
+
+	/* Global: Disabled colors */
+	--svant-text-color-disabled: var(--svant-gold-6);
+	--svant-text-color-disabled-hover: var(--svant-gold-5);
+	--svant-text-color-disabled-active: var(--svant-gold-7);
+
+	--svant-border-color-disabled: var(--svant-gold-6);
+	--svant-border-color-disabled-hover: var(--svant-gold-5);
+	--svant-border-color-disabled-active: var(--svant-gold-7);
+
+	--svant-bg-color-disabled: var(--svant-gold-1);
+	--svant-bg-color-disabled-hover: var(--svant-gold-2);
+	--svant-bg-color-disabled-active: var(--svant-gold-3);
+
+	/* Global: blue colors */
+	--svant-text-color-blue: var(--svant-blue-6);
+	--svant-text-color-blue-hover: var(--svant-blue-5);
+	--svant-text-color-blue-active: var(--svant-blue-7);
+
+	--svant-border-color-blue: var(--svant-blue-6);
+	--svant-border-color-blue-hover: var(--svant-blue-5);
+	--svant-border-color-blue-active: var(--svant-blue-7);
+
+	--svant-bg-color-blue: var(--svant-blue-1);
+	--svant-bg-color-blue-hover: var(--svant-blue-2);
+	--svant-bg-color-blue-active: var(--svant-blue-3);
+
+	--svant-solid-bg-color-blue: var(--svant-blue-6);
+	--svant-solid-bg-color-blue-hover: var(--svant-blue-5);
+	--svant-solid-bg-color-blue-active: var(--svant-blue-7);
+
+	--svant-shadow-color-blue: var(--svant-blue-shadow);
+	--svant-shadow-color-blue-hover: var(--svant-blue-shadow);
+	--svant-shadow-color-blue-active: var(--svant-blue-shadow);
+
+	--svant-wave-color-blue: var(--svant-blue-6);
+
+	/* Global: magneta / pink colors */
+	--svant-text-color-magenta: var(--svant-magenta-6);
+	--svant-text-color-magenta-hover: var(--svant-magenta-5);
+	--svant-text-color-magenta-active: var(--svant-magenta-7);
+
+	--svant-border-color-magenta: var(--svant-magenta-6);
+	--svant-border-color-magenta-hover: var(--svant-magenta-5);
+	--svant-border-color-magenta-active: var(--svant-magenta-7);
+
+	--svant-bg-color-magenta: var(--svant-magenta-1);
+	--svant-bg-color-magenta-hover: var(--svant-magenta-2);
+	--svant-bg-color-magenta-active: var(--svant-magenta-3);
+
+	--svant-solid-bg-color-magenta: var(--svant-magenta-6);
+	--svant-solid-bg-color-magenta-hover: var(--svant-magenta-5);
+	--svant-solid-bg-color-magenta-active: var(--svant-magenta-7);
+
+	--svant-shadow-color-magenta: var(--svant-magenta-shadow);
+	--svant-shadow-color-magenta-hover: var(--svant-magenta-shadow);
+	--svant-shadow-color-magenta-active: var(--svant-magenta-shadow);
+
+	--svant-wave-color-magenta: var(--svant-magenta-6);
+
+	/* Global: purple colors */
+	--svant-text-color-purple: var(--svant-purple-6);
+	--svant-text-color-purple-hover: var(--svant-purple-5);
+	--svant-text-color-purple-active: var(--svant-purple-7);
+
+	--svant-border-color-purple: var(--svant-purple-6);
+	--svant-border-color-purple-hover: var(--svant-purple-5);
+	--svant-border-color-purple-active: var(--svant-purple-7);
+
+	--svant-bg-color-purple: var(--svant-purple-1);
+	--svant-bg-color-purple-hover: var(--svant-purple-2);
+	--svant-bg-color-purple-active: var(--svant-purple-3);
+
+	--svant-solid-bg-color-purple: var(--svant-purple-6);
+	--svant-solid-bg-color-purple-hover: var(--svant-purple-5);
+	--svant-solid-bg-color-purple-active: var(--svant-purple-7);
+
+	--svant-shadow-color-purple: var(--svant-purple-shadow);
+	--svant-shadow-color-purple-hover: var(--svant-purple-shadow);
+	--svant-shadow-color-purple-active: var(--svant-purple-shadow);
+
+	--svant-wave-color-purple: var(--svant-purple-6);
+
+	/* Global: cyan colors */
+	--svant-text-color-cyan: var(--svant-cyan-6);
+	--svant-text-color-cyan-hover: var(--svant-cyan-5);
+	--svant-text-color-cyan-active: var(--svant-cyan-7);
+
+	--svant-border-color-cyan: var(--svant-cyan-6);
+	--svant-border-color-cyan-hover: var(--svant-cyan-5);
+	--svant-border-color-cyan-active: var(--svant-cyan-7);
+
+	--svant-bg-color-cyan: var(--svant-cyan-1);
+	--svant-bg-color-cyan-hover: var(--svant-cyan-2);
+	--svant-bg-color-cyan-active: var(--svant-cyan-3);
+
+	--svant-solid-bg-color-cyan: var(--svant-cyan-6);
+	--svant-solid-bg-color-cyan-hover: var(--svant-cyan-5);
+	--svant-solid-bg-color-cyan-active: var(--svant-cyan-7);
+
+	--svant-shadow-color-cyan: var(--svant-cyan-shadow);
+	--svant-shadow-color-cyan-hover: var(--svant-cyan-shadow);
+	--svant-shadow-color-cyan-active: var(--svant-cyan-shadow);
+
+	--svant-wave-color-cyan: var(--svant-cyan-6);
+
+	/* Global: green colors */
+	--svant-text-color-green: var(--svant-green-6);
+	--svant-text-color-green-hover: var(--svant-green-5);
+	--svant-text-color-green-active: var(--svant-green-7);
+
+	--svant-border-color-green: var(--svant-green-6);
+	--svant-border-color-green-hover: var(--svant-green-5);
+	--svant-border-color-green-active: var(--svant-green-7);
+
+	--svant-bg-color-green: var(--svant-green-1);
+	--svant-bg-color-green-hover: var(--svant-green-2);
+	--svant-bg-color-green-active: var(--svant-green-3);
+
+	--svant-solid-bg-color-green: var(--svant-green-6);
+	--svant-solid-bg-color-green-hover: var(--svant-green-5);
+	--svant-solid-bg-color-green-active: var(--svant-green-7);
+
+	--svant-shadow-color-green: var(--svant-green-shadow);
+	--svant-shadow-color-green-hover: var(--svant-green-shadow);
+	--svant-shadow-color-green-active: var(--svant-green-shadow);
+
+	--svant-wave-color-green: var(--svant-green-6);
+
+	/* Global: red colors */
+	--svant-text-color-red: var(--svant-red-5);
+	--svant-text-color-red-hover: var(--svant-red-4);
+	--svant-text-color-red-active: var(--svant-red-6);
+
+	--svant-border-color-red: var(--svant-red-5);
+	--svant-border-color-red-hover: var(--svant-red-4);
+	--svant-border-color-red-active: var(--svant-red-6);
+
+	--svant-bg-color-red: var(--svant-red-1);
+	--svant-bg-color-red-hover: var(--svant-red-2);
+	--svant-bg-color-red-active: var(--svant-red-3);
+
+	--svant-solid-bg-color-red: var(--svant-red-5);
+	--svant-solid-bg-color-red-hover: var(--svant-red-4);
+	--svant-solid-bg-color-red-active: var(--svant-red-6);
+
+	--svant-shadow-color-red: var(--svant-red-shadow);
+	--svant-shadow-color-red-hover: var(--svant-red-shadow);
+	--svant-shadow-color-red-active: var(--svant-red-shadow);
+
+	--svant-wave-color-red: var(--svant-red-5);
+
+	/* Global: orange colors */
+	--svant-text-color-orange: var(--svant-orange-6);
+	--svant-text-color-orange-hover: var(--svant-orange-5);
+	--svant-text-color-orange-active: var(--svant-orange-7);
+
+	--svant-border-color-orange: var(--svant-orange-6);
+	--svant-border-color-orange-hover: var(--svant-orange-5);
+	--svant-border-color-orange-active: var(--svant-orange-7);
+
+	--svant-bg-color-orange: var(--svant-orange-1);
+	--svant-bg-color-orange-hover: var(--svant-orange-2);
+	--svant-bg-color-orange-active: var(--svant-orange-3);
+
+	--svant-solid-bg-color-orange: var(--svant-orange-6);
+	--svant-solid-bg-color-orange-hover: var(--svant-orange-5);
+	--svant-solid-bg-color-orange-active: var(--svant-orange-7);
+
+	--svant-shadow-color-orange: var(--svant-orange-shadow);
+	--svant-shadow-color-orange-hover: var(--svant-orange-shadow);
+	--svant-shadow-color-orange-active: var(--svant-orange-shadow);
+
+	--svant-wave-color-orange: var(--svant-orange-6);
+
+	/* Global: yellow colors */
+	--svant-text-color-yellow: var(--svant-yellow-6);
+	--svant-text-color-yellow-hover: var(--svant-yellow-5);
+	--svant-text-color-yellow-active: var(--svant-yellow-7);
+
+	--svant-border-color-yellow: var(--svant-yellow-6);
+	--svant-border-color-yellow-hover: var(--svant-yellow-5);
+	--svant-border-color-yellow-active: var(--svant-yellow-7);
+
+	--svant-bg-color-yellow: var(--svant-yellow-1);
+	--svant-bg-color-yellow-hover: var(--svant-yellow-2);
+	--svant-bg-color-yellow-active: var(--svant-yellow-3);
+
+	--svant-solid-bg-color-yellow: var(--svant-yellow-6);
+	--svant-solid-bg-color-yellow-hover: var(--svant-yellow-5);
+	--svant-solid-bg-color-yellow-active: var(--svant-yellow-7);
+
+	--svant-shadow-color-yellow: var(--svant-yellow-shadow);
+	--svant-shadow-color-yellow-hover: var(--svant-yellow-shadow);
+	--svant-shadow-color-yellow-active: var(--svant-yellow-shadow);
+
+	--svant-wave-color-yellow: var(--svant-yellow-6);
+
+	/* Global: volcano colors */
+	--svant-text-color-volcano: var(--svant-volcano-6);
+	--svant-text-color-volcano-hover: var(--svant-volcano-5);
+	--svant-text-color-volcano-active: var(--svant-volcano-7);
+
+	--svant-border-color-volcano: var(--svant-volcano-6);
+	--svant-border-color-volcano-hover: var(--svant-volcano-5);
+	--svant-border-color-volcano-active: var(--svant-volcano-7);
+
+	--svant-bg-color-volcano: var(--svant-volcano-1);
+	--svant-bg-color-volcano-hover: var(--svant-volcano-2);
+	--svant-bg-color-volcano-active: var(--svant-volcano-3);
+
+	--svant-solid-bg-color-volcano: var(--svant-volcano-6);
+	--svant-solid-bg-color-volcano-hover: var(--svant-volcano-5);
+	--svant-solid-bg-color-volcano-active: var(--svant-volcano-7);
+
+	--svant-shadow-color-volcano: var(--svant-volcano-shadow);
+	--svant-shadow-color-volcano-hover: var(--svant-volcano-shadow);
+	--svant-shadow-color-volcano-active: var(--svant-volcano-shadow);
+
+	--svant-wave-color-volcano: var(--svant-volcano-6);
+
+	/* Global: geekblue colors */
+	--svant-text-color-geekblue: var(--svant-geekblue-6);
+	--svant-text-color-geekblue-hover: var(--svant-geekblue-5);
+	--svant-text-color-geekblue-active: var(--svant-geekblue-7);
+
+	--svant-border-color-geekblue: var(--svant-geekblue-6);
+	--svant-border-color-geekblue-hover: var(--svant-geekblue-5);
+	--svant-border-color-geekblue-active: var(--svant-geekblue-7);
+
+	--svant-bg-color-geekblue: var(--svant-geekblue-1);
+	--svant-bg-color-geekblue-hover: var(--svant-geekblue-2);
+	--svant-bg-color-geekblue-active: var(--svant-geekblue-3);
+
+	--svant-solid-bg-color-geekblue: var(--svant-geekblue-6);
+	--svant-solid-bg-color-geekblue-hover: var(--svant-geekblue-5);
+	--svant-solid-bg-color-geekblue-active: var(--svant-geekblue-7);
+
+	--svant-shadow-color-geekblue: var(--svant-geekblue-shadow);
+	--svant-shadow-color-geekblue-hover: var(--svant-geekblue-shadow);
+	--svant-shadow-color-geekblue-active: var(--svant-geekblue-shadow);
+
+	--svant-wave-color-geekblue: var(--svant-geekblue-6);
+
+	/* Global: lime colors */
+	--svant-text-color-lime: var(--svant-lime-6);
+	--svant-text-color-lime-hover: var(--svant-lime-5);
+	--svant-text-color-lime-active: var(--svant-lime-7);
+
+	--svant-border-color-lime: var(--svant-lime-6);
+	--svant-border-color-lime-hover: var(--svant-lime-5);
+	--svant-border-color-lime-active: var(--svant-lime-7);
+
+	--svant-bg-color-lime: var(--svant-lime-1);
+	--svant-bg-color-lime-hover: var(--svant-lime-2);
+	--svant-bg-color-lime-active: var(--svant-lime-3);
+
+	--svant-solid-bg-color-lime: var(--svant-lime-6);
+	--svant-solid-bg-color-lime-hover: var(--svant-lime-5);
+	--svant-solid-bg-color-lime-active: var(--svant-lime-7);
+
+	--svant-shadow-color-lime: var(--svant-lime-shadow);
+	--svant-shadow-color-lime-hover: var(--svant-lime-shadow);
+	--svant-shadow-color-lime-active: var(--svant-lime-shadow);
+
+	--svant-wave-color-lime: var(--svant-lime-6);
+
+	/* Global: gold colors */
+	--svant-text-color-gold: var(--svant-gold-6);
+	--svant-text-color-gold-hover: var(--svant-gold-5);
+	--svant-text-color-gold-active: var(--svant-gold-7);
+
+	--svant-border-color-gold: var(--svant-gold-6);
+	--svant-border-color-gold-hover: var(--svant-gold-5);
+	--svant-border-color-gold-active: var(--svant-gold-7);
+
+	--svant-bg-color-gold: var(--svant-gold-1);
+	--svant-bg-color-gold-hover: var(--svant-gold-2);
+	--svant-bg-color-gold-active: var(--svant-gold-3);
+
+	--svant-solid-bg-color-gold: var(--svant-gold-6);
+	--svant-solid-bg-color-gold-hover: var(--svant-gold-5);
+	--svant-solid-bg-color-gold-active: var(--svant-gold-7);
+
+	--svant-shadow-color-gold: var(--svant-gold-shadow);
+	--svant-shadow-color-gold-hover: var(--svant-gold-shadow);
+	--svant-shadow-color-gold-active: var(--svant-gold-shadow);
+
+	--svant-wave-color-gold: var(--svant-gold-6);
+
+	/* Global: radius */
+	--svant-border-radius: 6px;
+	--svant-border-radius-sm: 4px;
+	--svant-border-radius-lg: 8px;
+
+	/* Global: sizing */
+	--svant-control-height-sm: 24px;
+	--svant-control-height: 32px;
+	--svant-control-height-lg: 40px;
+
+	/* Global: typography */
+	--svant-font-size: 14px;
+
+	/* Global: border & outline */
+	--svant-line-width: 1px;
+	--svant-line-width-focus: 3px;
+	--svant-line-color-focus: var(--svant-blue-outline-focus-color);
+	--svant-after-width-focus: calc(100% + 8px);
+	--svant-after-height-focus: calc(100% + 8px);
+
+	/* Global: motion */
+	--svant-motion-duration-mid: 0.25s;
+	--svant-motion-duration-slow: 0.35s;
+	--svant-motion-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+	--svant-motion-ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+	--svant-motion-ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+	--svant-motion-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+	--svant-motion-ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+	--svant-motion-ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+	--svant-motion-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+	--svant-motion-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+
+	/* Global: misc */
+	--svant-opacity-loading: 0.65;
+}

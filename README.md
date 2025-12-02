@@ -1,3 +1,3 @@
 # Axolt Svant
 
-Svelte implementation of [Ant Design](https://ant.design/)
+Svelte component library inspired by [Ant Design](https://ant.design/)
