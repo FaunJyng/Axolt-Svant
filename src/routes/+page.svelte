@@ -29,13 +29,24 @@
 				<div>---------------</div>
 				<Button block>Block</Button>
 			</div>
-			<div class="col" style="background-color: lightgray; padding: 0 1rem; border-radius: 6px;">
+			<div class="col">
+				<h1>Danger</h1>
+				<Button type="primary" danger>Primary</Button>
+				<Button danger>Default</Button>
+				<Button type="dashed" danger>Dashed</Button>
+				<Button type="text" block danger>Text</Button>
+				<Button type="link" block danger>Link</Button>
+			</div>
+			<div
+				class="col"
+				style="background-color: lightgray; padding: 0 1rem; padding-bottom: 1rem; border-radius: 6px;"
+			>
 				<h1>Ghost</h1>
-				<Button type="primary">Primary</Button>
-				<Button ghost>Default</Button>
-				<Button ghost type="dashed">Dashed</Button>
-				<Button ghost type="text" block>Text</Button>
-				<Button ghost type="link" block>Link</Button>
+				<Button type="primary" ghost>Primary</Button>
+				<Button variant="solid" color="cyan" ghost>Cyan</Button>
+				<Button variant="solid" color="purple" ghost>Purple</Button>
+				<Button variant="solid" color="red" ghost>Text</Button>
+				<Button variant="solid" color="pink" ghost>Pink</Button>
 			</div>
 		</div>
 		<div class="row">
@@ -98,8 +109,9 @@
 
 <style>
 	.wrapper {
-		width: 100vw;
-		height: 100vh;
+		width: 100%;
+		min-height: 100vh;
+		padding: 5rem 0;
 		display: flex;
 		justify-content: center;
 		align-items: center;

@@ -84,26 +84,6 @@
 	onMount(() => {
 		ref = root;
 	});
-
-	if ((danger || color) && !variant) {
-		switch (type) {
-			case 'default':
-				variant = 'outlined';
-				break;
-			case 'primary':
-				variant = 'solid';
-				break;
-			case 'dashed':
-				variant = 'dashed';
-				break;
-			case 'link':
-				variant = 'link';
-				break;
-			case 'text':
-				variant = 'text';
-				break;
-		}
-	}
 </script>
 
 <button
@@ -113,11 +93,11 @@
 	class={[
 		'tokens',
 		`type-${type}`,
-		`${color ? `color-${color}` : undefined}`,
-		`${danger ? 'danger' : undefined}`,
+		`${color ? `colored color-${color}` : undefined}`,
+		`${danger ? 'colored danger' : undefined}`,
 		`${ghost ? 'ghost' : undefined}`,
 		`${disabled ? 'disabled' : undefined}`,
-		`${variant ? `variant-${variant}` : undefined}`,
+		`${variant ? `varianted variant-${variant}` : undefined}`,
 		`size-${size}`,
 		`shape-${shape}`,
 		`${loading ? 'loading' : undefined}`,
@@ -217,6 +197,7 @@
 	}
 
 	/* Type layer */
+
 	.type-primary {
 		--btn-text-color: var(--svant-text-color-general-white);
 		--btn-text-color-hover: var(--svant-text-color-general-white);
@@ -237,34 +218,14 @@
 		--btn-wave-color: var(--svant-wave-color-primary);
 	}
 
-	.type-default {
-		--btn-text-color: var(--svant-text-color-default);
-		--btn-text-color-hover: var(--svant-text-color-default-hover);
-		--btn-text-color-active: var(--svant-text-color-default-active);
-
-		--btn-bg-color: var(--svant-bg-color-general);
-		--btn-bg-color-hover: var(--svant-bg-color-general);
-		--btn-bg-color-active: var(--svant-bg-color-general);
-
-		--btn-border-color: var(--svant-border-color-default);
-		--btn-border-color-hover: var(--svant-border-color-default-hover);
-		--btn-border-color-active: var(--svant-border-color-default-active);
-
-		--btn-shadow-color: var(--svant-shadow-color-default);
-		--btn-shadow-color-hover: var(--svant-shadow-color-default-hover);
-		--btn-shadow-color-active: var(--svant-shadow-color-default-active);
-
-		--btn-wave-color: var(--svant-wave-color-default);
-	}
-
 	.type-dashed {
 		--btn-text-color: var(--svant-text-color-default);
 		--btn-text-color-hover: var(--svant-text-color-default-hover);
 		--btn-text-color-active: var(--svant-text-color-default-active);
 
-		--btn-bg-color: var(--svant-bg-color-general);
-		--btn-bg-color-hover: var(--svant-bg-color-general);
-		--btn-bg-color-active: var(--svant-bg-color-general);
+		--btn-bg-color: transparent;
+		--btn-bg-color-hover: transparent;
+		--btn-bg-color-active: transparent;
 
 		--btn-border-color: var(--svant-border-color-default);
 		--btn-border-color-hover: var(--svant-border-color-default-hover);
@@ -277,6 +238,26 @@
 		--btn-wave-color: var(--svant-wave-color-default);
 
 		--btn-border-style: dashed;
+	}
+
+	.type-default {
+		--btn-text-color: var(--svant-text-color-default);
+		--btn-text-color-hover: var(--svant-text-color-default-hover);
+		--btn-text-color-active: var(--svant-text-color-default-active);
+
+		--btn-bg-color: transparent;
+		--btn-bg-color-hover: transparent;
+		--btn-bg-color-active: transparent;
+
+		--btn-border-color: var(--svant-border-color-default);
+		--btn-border-color-hover: var(--svant-border-color-default-hover);
+		--btn-border-color-active: var(--svant-border-color-default-active);
+
+		--btn-shadow-color: var(--svant-shadow-color-default);
+		--btn-shadow-color-hover: var(--svant-shadow-color-default-hover);
+		--btn-shadow-color-active: var(--svant-shadow-color-default-active);
+
+		--btn-wave-color: var(--svant-wave-color-default);
 	}
 
 	.type-text {
@@ -319,8 +300,33 @@
 		--btn-wave-color: transparent;
 	}
 
+	/* .type-primary.variant-outlined:not(.colored) <-> .color-primary .variant-outlined */
+	/* .type-primary.variant-dashed:not(.colored) <-> .color-primary .variant-dashed */
+	/* .type-primary.variant-outlined:not(.colored) <-> .color-primary .variant-outlined */
+	/* .type-primary.variant-text:not(.colored) <-> .color-primary .variant-text */
+
+	/* .type-default.variant-solid:not(.colored) <-> .color-default .variant-solid */
+	/* .type-default.variant-filled:not(.colored) <-> .color-default .variant-filled */
+
+	/* .type-dashed.variant-solid:not(.colored) <-> .color-default .variant-solid */
+	/* .type-dashed.variant-dashed:not(.colored) <-> .color-default .variant-dashed */
+
+	/* .type-text.variant-solid:not(.colored) <-> .type- */
+
 	/* - Color layer */
-	.color-default {
+	/* .varianted:not(.colored).type-default <-> .color-default */
+	/* .varianted:not(.colored).type-primary <-> .color-primary */
+
+	.color-default,
+	.varianted:not(.colored).type-default,
+	.type-dashed.varianted:not(.colored),
+	:is(.type-default, .type-dashed, .type-text, .type-link):is(
+			.variant-solid,
+			.variant-filled,
+			.variant-outlined,
+			.variant-dashed,
+			.variant-text
+		):not(.colored) {
 		--btn-variant-solid-text-color: var(--svant-text-color-general-white);
 		--btn-variant-solid-text-color-hover: var(--svant-text-color-general-white-hover);
 		--btn-variant-solid-text-color-active: var(--svant-text-color-general-white-active);
@@ -331,13 +337,13 @@
 		--btn-variant-outlined-text-color: var(--svant-text-color-default);
 		--btn-variant-outlined-text-color-hover: var(--svant-text-color-default-hover);
 		--btn-variant-outlined-text-color-active: var(--svant-text-color-default-active);
-		--btn-variant-outlined-border-color: var(--svant-text-color-default);
-		--btn-variant-outlined-border-color-hover: var(--svant-text-color-default-hover);
-		--btn-variant-outlined-border-color-active: var(--svant-text-color-default-active);
+		--btn-variant-outlined-border-color: var(--svant-border-color-default);
+		--btn-variant-outlined-border-color-hover: var(--svant-border-color-default-hover);
+		--btn-variant-outlined-border-color-active: var(--svant-border-color-default-active);
 
-		--btn-variant-filled-text-color: var(--svant-text-color-general-black);
-		--btn-variant-filled-text-color-hover: var(--svant-text-color-general-black-hover);
-		--btn-variant-filled-text-color-active: var(--svant-text-color-general-black-active);
+		--btn-variant-filled-text-color: var(--svant-text-color-general-theme);
+		--btn-variant-filled-text-color-hover: var(--svant-text-color-general-theme-hover);
+		--btn-variant-filled-text-color-active: var(--svant-text-color-general-theme-active);
 		--btn-variant-filled-bg-color: var(--svant-bg-color-default);
 		--btn-variant-filled-bg-color-hover: var(--svant-bg-color-default-hover);
 		--btn-variant-filled-bg-color-active: var(--svant-bg-color-default-active);
@@ -349,7 +355,9 @@
 		--btn-wave-color: var(--svant-wave-color-default);
 	}
 
-	.color-primary {
+	.color-primary,
+	.varianted:not(.colored).type-primary,
+	.type-primary:is(.variant-outlined, .variant-dashed, .variant-text):not(.colored) {
 		--btn-variant-solid-text-color: var(--svant-text-color-general-white);
 		--btn-variant-solid-text-color-hover: var(--svant-text-color-general-white-hover);
 		--btn-variant-solid-text-color-active: var(--svant-text-color-general-white-active);
@@ -787,8 +795,45 @@
 		--btn-wave-color: var();
 	}
 
+	.variant-solid.color-default,
+	.type-primary.color-default:not(.varianted),
+	.variant-solid:is(.type-default, .type-dashed, .type-text, .type-link):not(.colored),
+	.variant-filled.color-default,
+	.variant-filled:is(.type-default, .type-dashed, .type-text, .type-link):not(.colored) {
+		--btn-wave-color: var(--btn-bg-color-active);
+
+		--btn-border-color-hover: var(--svant-border-color-default-solid-hover);
+		--btn-border-color-active: var(--svant-border-color-default-solid-active);
+
+		--btn-shadow-color-hover: var(--btn-shadow-color);
+		--btn-shadow-color-active: var(--btn-shadow-color);
+	}
+
+	.type-text:is(.variant-outlined, .variant-dashed):not(.colored) {
+		--btn-text-color: var(--btn-variant-outlined-text-color);
+		--btn-text-color-hover: var(--btn-variant-outlined-text-color);
+		--btn-text-color-active: var(--btn-variant-outlined-text-color);
+
+		--btn-border-color: var(--btn-variant-outlined-border-color);
+		--btn-border-color-hover: var(--btn-variant-outlined-border-color);
+		--btn-border-color-active: var(--btn-variant-outlined-border-color);
+
+		--btn-shadow-color-hover: var(--btn-shadow-color);
+		--btn-shadow-color-active: var(--btn-shadow-color);
+
+		--btn-wave-color: var(--btn-variant-outlined-text-color);
+	}
+
 	/* - Variant layer */
-	.variant-solid {
+	/* .colored:not(.varianted).type-default <-> .variant-outlined */
+	/* .colored:not(.varianted).type-primary <-> .variant-solid */
+	/* .colored:not(.varianted).type-dashed <-> .variant-dashed */
+	/* .colored:not(.varianted).type-link <-> .variant-link */
+	/* .colored:not(.varianted).type-text <-> .variant-text */
+
+	.variant-solid,
+	.type-primary.colored:not(.varianted),
+	.variant-solid:is(.type-default, .type-dashed, .type-text):not(.colored) {
 		--btn-text-color: var(--btn-variant-solid-text-color);
 		--btn-text-color-hover: var(--btn-variant-solid-text-color-hover);
 		--btn-text-color-active: var(--btn-variant-solid-text-color-active);
@@ -803,8 +848,14 @@
 	}
 
 	.variant-outlined,
+	.type-default.colored:not(.varianted),
+	.type-primary.variant-outlined:not(.colored),
 	.variant-dashed,
-	.variant-link {
+	.type-primary.variant-dashed:not(.colored),
+	.type-dashed.variant-dashed:not(.colored),
+	.type-dashed.colored:not(.varianted),
+	.variant-link,
+	.type-link.colored:not(.varianted) {
 		--btn-text-color: var(--btn-variant-outlined-text-color);
 		--btn-text-color-hover: var(--btn-variant-outlined-text-color-hover);
 		--btn-text-color-active: var(--btn-variant-outlined-text-color-active);
@@ -812,13 +863,21 @@
 		--btn-border-color: var(--btn-variant-outlined-border-color);
 		--btn-border-color-hover: var(--btn-variant-outlined-border-color-hover);
 		--btn-border-color-active: var(--btn-variant-outlined-border-color-active);
+
+		--btn-bg-color: transparent;
+		--btn-bg-color-hover: transparent;
+		--btn-bg-color-active: transparent;
 	}
 
-	.variant-dashed {
+	.variant-dashed,
+	.type-dashed.colored:not(.varianted),
+	.type-dashed.variant-dashed:not(.colored),
+	.type-primary.variant-dashed:not(.colored) {
 		--btn-border-style: dashed;
 	}
 
-	.variant-link {
+	.variant-link,
+	.type-link.colored:not(.varianted) {
 		--btn-bg-color: transparent;
 		--btn-bg-color-hover: transparent;
 		--btn-bg-color-active: transparent;
@@ -835,7 +894,10 @@
 	}
 
 	.variant-filled,
-	.variant-text {
+	.type-default.variant-filled:not(.colored),
+	.variant-text,
+	.type-text.colored:not(.varianted),
+	.type-primary.variant-text:not(.colored) {
 		--btn-text-color: var(--btn-variant-filled-text-color);
 		--btn-text-color-hover: var(--btn-variant-filled-text-color-hover);
 		--btn-text-color-active: var(--btn-variant-filled-text-color-active);
@@ -849,13 +911,18 @@
 		--btn-border-color-active: var(--btn-variant-filled-bg-color-active);
 	}
 
-	.variant-filled.color-default {
+	.variant-filled.color-default,
+	.variant-filled:is(.type-default, .type-text, .type-link):not(.colored) {
 		--btn-border-color: transparent;
 		--btn-border-color-hover: transparent;
 		--btn-border-color-active: transparent;
 	}
 
-	.variant-text {
+	.variant-text,
+	.type-text.variant-text:not(.colored),
+	.type-text.colored:not(.varianted),
+	.type-primary.variant-text:not(.colored),
+	.type-text.variant-text:not(.colored) {
 		--btn-bg-color: transparent;
 
 		--btn-border-color: transparent;
@@ -870,16 +937,23 @@
 	}
 
 	/* Ghost layer */
+	.ghost.varianted.colored {
+		--btn-text-color: var(--btn-variant-filled-text-color);
+		--btn-text-color-hover: var(--btn-variant-filled-text-color-hover);
+		--btn-text-color-active: var(--btn-variant-filled-text-color-active);
+	}
+
+	.ghost.type-primary,
+	.ghost.variant-solid.color-primary {
+		--btn-text-color: var(--svant-text-color-primary);
+		--btn-text-color-hover: var(--svant-text-color-primary-hover);
+		--btn-text-color-active: var(--svant-text-color-primary-active);
+	}
+
 	.ghost:not(.type-text) {
 		--btn-bg-color: transparent;
 		--btn-bg-color-hover: transparent;
 		--btn-bg-color-active: transparent;
-	}
-
-	.ghost.type-primary {
-		--btn-text-color: var(--svant-text-color-primary);
-		--btn-text-color-hover: var(--svant-text-color-primary-hover);
-		--btn-text-color-active: var(--svant-text-color-primary-active);
 	}
 
 	/* Size layer */
@@ -963,6 +1037,17 @@
 		box-shadow: var(--btn-shadow-direction) var(--btn-shadow-color-active);
 	}
 
+	.root:is(.variant-text, .variant-link),
+	.root:is(.variant-text, .variant-link):is(:hover, :active) {
+		box-shadow: unset;
+	}
+
+	.root:hover.type-link,
+	.root:hover.variant-link {
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
 	.root:focus-visible {
 		outline: unset;
 	}
@@ -976,14 +1061,14 @@
 		border-width: var(--btn-line-width-focus);
 		border-color: var(--btn-line-color-focus);
 		border-style: solid;
-		border-radius: calc(var(--btn-border-radius) + var(--btn-padding-block) - 1px);
+		border-radius: calc(var(--btn-border-radius) + var(--btn-border-width) * 2.5);
 	}
 
 	.root:disabled {
 		cursor: not-allowed;
 	}
 
-	.root::before {
+	.root:not(.variant-text, .variant-link)::before {
 		content: '';
 		position: absolute;
 		width: 100%;
@@ -997,13 +1082,7 @@
 			opacity 1s var(--svant-motion-ease-in-out);
 	}
 
-	.root:hover.type-link,
-	.root:hover.variant-link {
-		text-decoration: underline;
-		text-underline-offset: 2px;
-	}
-
-	.root:active::before {
+	.root:not(.variant-text, .variant-link):active::before {
 		box-shadow: 0 0 0 0 var(--btn-wave-color);
 		opacity: 0.15;
 		transition: 0s;

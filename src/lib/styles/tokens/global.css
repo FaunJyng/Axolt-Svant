@@ -1,4 +1,5 @@
 /* Global: background & container */
+/* Theme independent tokens */
 :root {
 	--svant-bg-color-general: rgba(255, 255, 255, 0.97);
 
@@ -10,16 +11,54 @@
 	--svant-text-color-general-white-hover: rgba(255, 255, 255, 0.96);
 	--svant-text-color-general-white-active: rgba(255, 255, 255, 0.97);
 
-	--svant-text-color-general-theme: var(--svant-text-color-general-black);
-	--svant-text-color-general-theme-hover: var(--svant-text-color-general-black-hover);
-	--svant-text-color-general-theme-active: var(--svant-text-color-general-black-active);
-
 	--svant-heading-color-black: rgba(0, 0, 0, 0.9);
 	--svant-heading-color-white: rgba(255, 255, 255, 0.9);
 
 	/* Global: separator */
 	--svant-separator-color-black: rgba(5, 5, 5, 0.06);
 	--svant-separator-color-white: rgba(253, 253, 253, 0.13);
+
+	/* Global: radius */
+	--svant-border-radius: 6px;
+	--svant-border-radius-sm: 4px;
+	--svant-border-radius-lg: 8px;
+
+	/* Global: sizing */
+	--svant-control-height-sm: 24px;
+	--svant-control-height: 32px;
+	--svant-control-height-lg: 40px;
+
+	/* Global: typography */
+	--svant-font-size: 14px;
+
+	/* Global: border & outline */
+	--svant-line-width: 1px;
+	--svant-line-width-focus: 3px;
+	--svant-line-color-focus: var(--svant-blue-outline-focus-color);
+	--svant-after-width-focus: calc(100% + 8px);
+	--svant-after-height-focus: calc(100% + 8px);
+
+	/* Global: motion */
+	--svant-motion-duration-mid: 0.25s;
+	--svant-motion-duration-slow: 0.35s;
+	--svant-motion-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+	--svant-motion-ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+	--svant-motion-ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+	--svant-motion-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+	--svant-motion-ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+	--svant-motion-ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+	--svant-motion-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+	--svant-motion-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+
+	/* Global: misc */
+	--svant-opacity-loading: 0.65;
+}
+
+/* Theme dependent tokens */
+.svant-theme-light {
+	--svant-text-color-general-theme: var(--svant-text-color-general-black);
+	--svant-text-color-general-theme-hover: var(--svant-text-color-general-black-hover);
+	--svant-text-color-general-theme-active: var(--svant-text-color-general-black-active);
 
 	/* Global: default colors */
 	--svant-text-color-default: var(--svant-text-color-general-black);
@@ -29,6 +68,9 @@
 	--svant-border-color-default: rgba(0, 0, 0, 0.255);
 	--svant-border-color-default-hover: var(--svant-blue-6);
 	--svant-border-color-default-active: var(--svant-blue-7);
+
+	--svant-border-color-default-solid-hover: rgba(0, 0, 0, 0.255);
+	--svant-border-color-default-solid-active: rgba(0, 0, 0, 0.255);
 
 	--svant-bg-color-default: rgba(0, 0, 0, 0.04);
 	--svant-bg-color-default-hover: rgba(0, 0, 0, 0.1);
@@ -408,39 +450,4 @@
 	--svant-shadow-color-gold-active: var(--svant-gold-shadow);
 
 	--svant-wave-color-gold: var(--svant-gold-6);
-
-	/* Global: radius */
-	--svant-border-radius: 6px;
-	--svant-border-radius-sm: 4px;
-	--svant-border-radius-lg: 8px;
-
-	/* Global: sizing */
-	--svant-control-height-sm: 24px;
-	--svant-control-height: 32px;
-	--svant-control-height-lg: 40px;
-
-	/* Global: typography */
-	--svant-font-size: 14px;
-
-	/* Global: border & outline */
-	--svant-line-width: 1px;
-	--svant-line-width-focus: 3px;
-	--svant-line-color-focus: var(--svant-blue-outline-focus-color);
-	--svant-after-width-focus: calc(100% + 8px);
-	--svant-after-height-focus: calc(100% + 8px);
-
-	/* Global: motion */
-	--svant-motion-duration-mid: 0.25s;
-	--svant-motion-duration-slow: 0.35s;
-	--svant-motion-ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
-	--svant-motion-ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
-	--svant-motion-ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
-	--svant-motion-ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
-	--svant-motion-ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
-	--svant-motion-ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
-	--svant-motion-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-	--svant-motion-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-
-	/* Global: misc */
-	--svant-opacity-loading: 0.65;
 }

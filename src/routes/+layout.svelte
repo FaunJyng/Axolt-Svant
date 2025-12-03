@@ -3,7 +3,7 @@
 	let { children } = $props();
 </script>
 
-<div class="wrapper">
+<div class="wrapper svant-theme-light">
 	<header></header>
 	<main>
 		{@render children()}
