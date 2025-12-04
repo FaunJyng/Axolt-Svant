@@ -1,4 +1,23 @@
 :root {
+	--svant-red-shadow: rgba(255, 22, 5, 0.06);
+	--svant-volcano-shadow: rgba(255, 125, 25, 0.1);
+	--svant-orange-shadow: rgba(255, 175, 5, 0.1);
+	--svant-gold-shadow: rgba(255, 213, 0, 0.1);
+	--svant-yellow-shadow: rgba(246, 255, 0, 0.1);
+	--svant-lime-shadow: rgba(225, 255, 5, 0.1);
+	--svant-green-shadow: rgba(142, 255, 30, 0.08);
+	--svant-cyan-shadow: rgba(5, 255, 215, 0.1);
+	--svant-blue-outline-focus-color: rgba(2, 107, 255, 0.42);
+	--svant-blue-shadow: rgba(5, 145, 255, 0.1);
+	--svant-geekblue-outline-focus-color: rgba(29, 72, 244, 0.42);
+	--svant-geekblue-shadow: rgba(5, 88, 255, 0.06);
+	--svant-purple-shadow: rgba(155, 5, 255, 0.06);
+	--svant-magenta-shadow: rgba(255, 5, 105, 0.06);
+	--svant-pink-shadow: rgba(255, 5, 105, 0.06);
+	--svant-gray-shadow: rgba(0, 0, 0, 0.04);
+}
+
+.svant-theme-light {
 	--svant-red-1: #fff1f0;
 	--svant-red-2: #ffccc7;
 	--svant-red-3: #ffa39e;
@@ -9,7 +28,6 @@
 	--svant-red-8: #a8071a;
 	--svant-red-9: #820014;
 	--svant-red-10: #5c0011;
-	--svant-red-shadow: rgba(255, 22, 5, 0.06);
 
 	--svant-volcano-1: #fff2e8;
 	--svant-volcano-2: #ffd8bf;
@@ -21,7 +39,6 @@
 	--svant-volcano-8: #ad2102;
 	--svant-volcano-9: #871400;
 	--svant-volcano-10: #610b00;
-	--svant-volcano-shadow: rgba(255, 125, 25, 0.1);
 
 	--svant-orange-1: #fff7e6;
 	--svant-orange-2: #ffe7ba;
@@ -33,7 +50,6 @@
 	--svant-orange-8: #ad4e00;
 	--svant-orange-9: #873800;
 	--svant-orange-10: #612500;
-	--svant-orange-shadow: rgba(255, 175, 5, 0.1);
 
 	--svant-gold-1: #fffbe6;
 	--svant-gold-2: #fff1b8;
@@ -45,7 +61,6 @@
 	--svant-gold-8: #ad6800;
 	--svant-gold-9: #874d00;
 	--svant-gold-10: #613400;
-	--svant-gold-shadow: rgba(255, 213, 0, 0.1);
 
 	--svant-yellow-1: #feffe6;
 	--svant-yellow-2: #ffffb8;
@@ -57,7 +72,6 @@
 	--svant-yellow-8: #ad8b00;
 	--svant-yellow-9: #876800;
 	--svant-yellow-10: #614700;
-	--svant-yellow-shadow: rgba(246, 255, 0, 0.1);
 
 	--svant-lime-1: #fcffe6;
 	--svant-lime-2: #f4ffb8;
@@ -69,7 +83,6 @@
 	--svant-lime-8: #5b8c00;
 	--svant-lime-9: #3f6600;
 	--svant-lime-10: #254000;
-	--svant-lime-shadow: rgba(225, 255, 5, 0.1);
 
 	--svant-green-1: #f6ffed;
 	--svant-green-2: #d9f7be;
@@ -81,7 +94,6 @@
 	--svant-green-8: #237804;
 	--svant-green-9: #135200;
 	--svant-green-10: #092b00;
-	--svant-green-shadow: rgba(142, 255, 30, 0.08);
 
 	--svant-cyan-1: #e6fffb;
 	--svant-cyan-2: #b5f5ec;
@@ -93,7 +105,6 @@
 	--svant-cyan-8: #006d75;
 	--svant-cyan-9: #00474f;
 	--svant-cyan-10: #002329;
-	--svant-cyan-shadow: rgba(5, 255, 215, 0.1);
 
 	--svant-blue-1: #e6f4ff;
 	--svant-blue-2: #bae0ff;
@@ -105,8 +116,6 @@
 	--svant-blue-8: #003eb3;
 	--svant-blue-9: #002c8c;
 	--svant-blue-10: #001d66;
-	--svant-blue-outline-focus-color: rgba(2, 107, 255, 0.42);
-	--svant-blue-shadow: rgba(5, 145, 255, 0.1);
 
 	--svant-geekblue-1: #f0f5ff;
 	--svant-geekblue-2: #d6e4ff;
@@ -119,7 +128,6 @@
 	--svant-geekblue-9: #061178;
 	--svant-geekblue-10: #030852;
 	--svant-geekblue-outline-focus-color: rgba(29, 72, 244, 0.42);
-	--svant-geekblue-shadow: #0558ff0f;
 
 	--svant-purple-1: #f9f0ff;
 	--svant-purple-2: #efdbff;
@@ -131,7 +139,6 @@
 	--svant-purple-8: #391085;
 	--svant-purple-9: #22075e;
 	--svant-purple-10: #120338;
-	--svant-purple-shadow: #9b05ff0f;
 
 	--svant-magenta-1: #fff0f6;
 	--svant-magenta-2: #ffd6e7;
@@ -143,7 +150,6 @@
 	--svant-magenta-8: #9e1068;
 	--svant-magenta-9: #780650;
 	--svant-magenta-10: #520339;
-	--svant-magenta-shadow: #ff05690f;
 
 	--svant-pink-1: #fff0f6;
 	--svant-pink-2: #ffd6e7;
@@ -155,7 +161,6 @@
 	--svant-pink-8: #9e1068;
 	--svant-pink-9: #780650;
 	--svant-pink-10: #520339;
-	--svant-pink-shadow: #ff05690f;
 
 	--svant-gray-1: #ffffff;
 	--svant-gray-2: #f2f2f2;
@@ -167,5 +172,468 @@
 	--svant-gray-8: #737373;
 	--svant-gray-9: #4d4d4d;
 	--svant-gray-10: #262626;
-	--svant-gray-shadow: rgba(0, 0, 0, 0.04);
+
+	--svant-red-1-rgb-value: 255, 241, 240;
+	--svant-red-2-rgb-value: 255, 204, 199;
+	--svant-red-3-rgb-value: 255, 163, 158;
+	--svant-red-4-rgb-value: 255, 120, 117;
+	--svant-red-5-rgb-value: 255, 77, 79;
+	--svant-red-6-rgb-value: 245, 34, 45;
+	--svant-red-7-rgb-value: 207, 19, 34;
+	--svant-red-8-rgb-value: 168, 7, 26;
+	--svant-red-9-rgb-value: 130, 0, 20;
+	--svant-red-10-rgb-value: 92, 0, 17;
+
+	--svant-volcano-1-rgb-value: 255, 242, 232;
+	--svant-volcano-2-rgb-value: 255, 216, 191;
+	--svant-volcano-3-rgb-value: 255, 187, 150;
+	--svant-volcano-4-rgb-value: 255, 156, 110;
+	--svant-volcano-5-rgb-value: 255, 122, 69;
+	--svant-volcano-6-rgb-value: 250, 84, 28;
+	--svant-volcano-7-rgb-value: 212, 56, 13;
+	--svant-volcano-8-rgb-value: 173, 33, 2;
+	--svant-volcano-9-rgb-value: 135, 20, 0;
+	--svant-volcano-10-rgb-value: 97, 11, 0;
+
+	--svant-orange-1-rgb-value: 255, 247, 230;
+	--svant-orange-2-rgb-value: 255, 231, 186;
+	--svant-orange-3-rgb-value: 255, 213, 145;
+	--svant-orange-4-rgb-value: 255, 192, 105;
+	--svant-orange-5-rgb-value: 255, 169, 64;
+	--svant-orange-6-rgb-value: 250, 140, 22;
+	--svant-orange-7-rgb-value: 212, 107, 8;
+	--svant-orange-8-rgb-value: 173, 78, 0;
+	--svant-orange-9-rgb-value: 135, 56, 0;
+	--svant-orange-10-rgb-value: 97, 37, 0;
+
+	--svant-gold-1-rgb-value: 255, 251, 230;
+	--svant-gold-2-rgb-value: 255, 241, 184;
+	--svant-gold-3-rgb-value: 255, 229, 143;
+	--svant-gold-4-rgb-value: 255, 214, 102;
+	--svant-gold-5-rgb-value: 255, 197, 61;
+	--svant-gold-6-rgb-value: 250, 173, 20;
+	--svant-gold-7-rgb-value: 212, 136, 6;
+	--svant-gold-8-rgb-value: 173, 104, 0;
+	--svant-gold-9-rgb-value: 135, 77, 0;
+	--svant-gold-10-rgb-value: 97, 52, 0;
+
+	--svant-yellow-1-rgb-value: 254, 255, 230;
+	--svant-yellow-2-rgb-value: 255, 255, 184;
+	--svant-yellow-3-rgb-value: 255, 251, 143;
+	--svant-yellow-4-rgb-value: 255, 245, 102;
+	--svant-yellow-5-rgb-value: 255, 236, 61;
+	--svant-yellow-6-rgb-value: 250, 219, 20;
+	--svant-yellow-7-rgb-value: 212, 177, 6;
+	--svant-yellow-8-rgb-value: 173, 139, 0;
+	--svant-yellow-9-rgb-value: 135, 104, 0;
+	--svant-yellow-10-rgb-value: 97, 71, 0;
+
+	--svant-lime-1-rgb-value: 252, 255, 230;
+	--svant-lime-2-rgb-value: 244, 255, 184;
+	--svant-lime-3-rgb-value: 234, 255, 143;
+	--svant-lime-4-rgb-value: 211, 242, 97;
+	--svant-lime-5-rgb-value: 186, 230, 55;
+	--svant-lime-6-rgb-value: 160, 217, 17;
+	--svant-lime-7-rgb-value: 124, 179, 5;
+	--svant-lime-8-rgb-value: 91, 140, 0;
+	--svant-lime-9-rgb-value: 63, 102, 0;
+	--svant-lime-10-rgb-value: 37, 64, 0;
+
+	--svant-green-1-rgb-value: 246, 255, 237;
+	--svant-green-2-rgb-value: 217, 247, 190;
+	--svant-green-3-rgb-value: 183, 235, 143;
+	--svant-green-4-rgb-value: 149, 222, 100;
+	--svant-green-5-rgb-value: 115, 209, 61;
+	--svant-green-6-rgb-value: 82, 196, 26;
+	--svant-green-7-rgb-value: 56, 158, 13;
+	--svant-green-8-rgb-value: 35, 120, 4;
+	--svant-green-9-rgb-value: 19, 82, 0;
+	--svant-green-10-rgb-value: 9, 43, 0;
+
+	--svant-cyan-1-rgb-value: 230, 255, 251;
+	--svant-cyan-2-rgb-value: 181, 245, 236;
+	--svant-cyan-3-rgb-value: 135, 232, 222;
+	--svant-cyan-4-rgb-value: 92, 219, 211;
+	--svant-cyan-5-rgb-value: 54, 207, 201;
+	--svant-cyan-6-rgb-value: 19, 194, 194;
+	--svant-cyan-7-rgb-value: 8, 151, 156;
+	--svant-cyan-8-rgb-value: 0, 109, 117;
+	--svant-cyan-9-rgb-value: 0, 71, 79;
+	--svant-cyan-10-rgb-value: 0, 35, 41;
+
+	--svant-blue-1-rgb-value: 230, 244, 255;
+	--svant-blue-2-rgb-value: 186, 224, 255;
+	--svant-blue-3-rgb-value: 145, 202, 255;
+	--svant-blue-4-rgb-value: 105, 177, 255;
+	--svant-blue-5-rgb-value: 64, 150, 255;
+	--svant-blue-6-rgb-value: 22, 119, 255;
+	--svant-blue-7-rgb-value: 9, 88, 217;
+	--svant-blue-8-rgb-value: 0, 62, 179;
+	--svant-blue-9-rgb-value: 0, 44, 140;
+	--svant-blue-10-rgb-value: 0, 29, 102;
+
+	--svant-geekblue-1-rgb-value: 240, 245, 255;
+	--svant-geekblue-2-rgb-value: 214, 228, 255;
+	--svant-geekblue-3-rgb-value: 173, 198, 255;
+	--svant-geekblue-4-rgb-value: 133, 165, 255;
+	--svant-geekblue-5-rgb-value: 89, 126, 247;
+	--svant-geekblue-6-rgb-value: 47, 84, 235;
+	--svant-geekblue-7-rgb-value: 29, 57, 196;
+	--svant-geekblue-8-rgb-value: 16, 35, 158;
+	--svant-geekblue-9-rgb-value: 6, 17, 120;
+	--svant-geekblue-10-rgb-value: 3, 8, 82;
+
+	--svant-purple-1-rgb-value: 249, 240, 255;
+	--svant-purple-2-rgb-value: 239, 219, 255;
+	--svant-purple-3-rgb-value: 211, 173, 247;
+	--svant-purple-4-rgb-value: 179, 127, 235;
+	--svant-purple-5-rgb-value: 146, 84, 222;
+	--svant-purple-6-rgb-value: 114, 46, 209;
+	--svant-purple-7-rgb-value: 83, 29, 171;
+	--svant-purple-8-rgb-value: 57, 16, 133;
+	--svant-purple-9-rgb-value: 34, 7, 94;
+	--svant-purple-10-rgb-value: 18, 3, 56;
+
+	--svant-magenta-1-rgb-value: 255, 240, 246;
+	--svant-magenta-2-rgb-value: 255, 214, 231;
+	--svant-magenta-3-rgb-value: 255, 173, 210;
+	--svant-magenta-4-rgb-value: 255, 133, 192;
+	--svant-magenta-5-rgb-value: 247, 89, 171;
+	--svant-magenta-6-rgb-value: 235, 47, 150;
+	--svant-magenta-7-rgb-value: 196, 29, 127;
+	--svant-magenta-8-rgb-value: 158, 16, 104;
+	--svant-magenta-9-rgb-value: 120, 6, 80;
+	--svant-magenta-10-rgb-value: 82, 3, 57;
+
+	--svant-pink-1-rgb-value: 255, 240, 246;
+	--svant-pink-2-rgb-value: 255, 214, 231;
+	--svant-pink-3-rgb-value: 255, 173, 210;
+	--svant-pink-4-rgb-value: 255, 133, 192;
+	--svant-pink-5-rgb-value: 247, 89, 171;
+	--svant-pink-6-rgb-value: 235, 47, 150;
+	--svant-pink-7-rgb-value: 196, 29, 127;
+	--svant-pink-8-rgb-value: 158, 16, 104;
+	--svant-pink-9-rgb-value: 120, 6, 80;
+	--svant-pink-10-rgb-value: 82, 3, 57;
+
+	--svant-gray-1-rgb-value: 255, 255, 255;
+	--svant-gray-2-rgb-value: 242, 242, 242;
+	--svant-gray-3-rgb-value: 230, 230, 230;
+	--svant-gray-4-rgb-value: 217, 217, 217;
+	--svant-gray-5-rgb-value: 204, 204, 204;
+	--svant-gray-6-rgb-value: 191, 191, 191;
+	--svant-gray-7-rgb-value: 153, 153, 153;
+	--svant-gray-8-rgb-value: 115, 115, 115;
+	--svant-gray-9-rgb-value: 77, 77, 77;
+	--svant-gray-10-rgb-value: 38, 38, 38;
+}
+
+.svant-theme-dark {
+	--svant-red-1: #2a1215;
+	--svant-red-2: #431418;
+	--svant-red-3: #58181c;
+	--svant-red-4: #791a1f;
+	--svant-red-5: #a61d24;
+	--svant-red-6: #cf1322;
+	--svant-red-7: #e84749;
+	--svant-red-8: #f37370;
+	--svant-red-9: #f89f9a;
+	--svant-red-10: #fac8c3;
+
+	--svant-volcano-1: #2b1611;
+	--svant-volcano-2: #441d12;
+	--svant-volcano-3: #592716;
+	--svant-volcano-4: #7c3118;
+	--svant-volcano-5: #aa3e19;
+	--svant-volcano-6: #d84a1b;
+	--svant-volcano-7: #e87040;
+	--svant-volcano-8: #f3956a;
+	--svant-volcano-9: #f8b692;
+	--svant-volcano-10: #fad4bc;
+
+	--svant-orange-1: #2b1d11;
+	--svant-orange-2: #442a11;
+	--svant-orange-3: #593815;
+	--svant-orange-4: #7c4a15;
+	--svant-orange-5: #aa6215;
+	--svant-orange-6: #fa8c16;
+	--svant-orange-7: #e89a3c;
+	--svant-orange-8: #f3b765;
+	--svant-orange-9: #f8cf8d;
+	--svant-orange-10: #fae3b7;
+
+	--svant-gold-1: #2b2111;
+	--svant-gold-2: #443111;
+	--svant-gold-3: #594214;
+	--svant-gold-4: #7c5914;
+	--svant-gold-5: #aa7714;
+	--svant-gold-6: #fadb14;
+	--svant-gold-7: #e8c339;
+	--svant-gold-8: #f3da62;
+	--svant-gold-9: #f8e689;
+	--svant-gold-10: #faedb3;
+
+	--svant-yellow-1: #2b2611;
+	--svant-yellow-2: #443b11;
+	--svant-yellow-3: #595014;
+	--svant-yellow-4: #7c6e14;
+	--svant-yellow-5: #aa9514;
+	--svant-yellow-6: #fadb14;
+	--svant-yellow-7: #e8d639;
+	--svant-yellow-8: #f3e562;
+	--svant-yellow-9: #f8ee89;
+	--svant-yellow-10: #faf4b3;
+
+	--svant-lime-1: #1f2611;
+	--svant-lime-2: #2e3c10;
+	--svant-lime-3: #3e4f13;
+	--svant-lime-4: #536d13;
+	--svant-lime-5: #6f9412;
+	--svant-lime-6: #a0d911;
+	--svant-lime-7: #bae637;
+	--svant-lime-8: #d3f261;
+	--svant-lime-9: #eaff8f;
+	--svant-lime-10: #f4ffb8;
+
+	--svant-green-1: #162312;
+	--svant-green-2: #1d3712;
+	--svant-green-3: #274916;
+	--svant-green-4: #306317;
+	--svant-green-5: #3c8618;
+	--svant-green-6: #49aa19;
+	--svant-green-7: #6abe39;
+	--svant-green-8: #8fd460;
+	--svant-green-9: #b7eb8f;
+	--svant-green-10: #d9f7be;
+
+	--svant-cyan-1: #112123;
+	--svant-cyan-2: #113a3e;
+	--svant-cyan-3: #144e52;
+	--svant-cyan-4: #146b6f;
+	--svant-cyan-5: #138585;
+	--svant-cyan-6: #13c2c2;
+	--svant-cyan-7: #33cccc;
+	--svant-cyan-8: #58dada;
+	--svant-cyan-9: #84e6e6;
+	--svant-cyan-10: #b2f0f0;
+
+	--svant-blue-1: #111d2c;
+	--svant-blue-2: #112a45;
+	--svant-blue-3: #15395b;
+	--svant-blue-4: #164c7e;
+	--svant-blue-5: #1765ad;
+	--svant-blue-6: #177ddc;
+	--svant-blue-7: #3c9ae8;
+	--svant-blue-8: #65b7f3;
+	--svant-blue-9: #8dcff8;
+	--svant-blue-10: #b7e3fa;
+
+	--svant-geekblue-1: #131629;
+	--svant-geekblue-2: #161d40;
+	--svant-geekblue-3: #1c2755;
+	--svant-geekblue-4: #203175;
+	--svant-geekblue-5: #263ea0;
+	--svant-geekblue-6: #2b4acb;
+	--svant-geekblue-7: #5273e0;
+	--svant-geekblue-8: #7f9ef3;
+	--svant-geekblue-9: #a8c1f8;
+	--svant-geekblue-10: #d2e2fa;
+
+	--svant-purple-1: #1a1325;
+	--svant-purple-2: #24163a;
+	--svant-purple-3: #301c4d;
+	--svant-purple-4: #3e2069;
+	--svant-purple-5: #51258f;
+	--svant-purple-6: #722ed1;
+	--svant-purple-7: #8f5de4;
+	--svant-purple-8: #b37feb;
+	--svant-purple-9: #d3adf7;
+	--svant-purple-10: #efdbff;
+
+	--svant-magenta-1: #291321;
+	--svant-magenta-2: #40162f;
+	--svant-magenta-3: #551c3b;
+	--svant-magenta-4: #75204f;
+	--svant-magenta-5: #a02669;
+	--svant-magenta-6: #c41d7f;
+	--svant-magenta-7: #e0529c;
+	--svant-magenta-8: #f078b6;
+	--svant-magenta-9: #f8a0cf;
+	--svant-magenta-10: #fad2e3;
+
+	--svant-pink-1: #291321;
+	--svant-pink-2: #40162f;
+	--svant-pink-3: #551c3b;
+	--svant-pink-4: #75204f;
+	--svant-pink-5: #a02669;
+	--svant-pink-6: #c41d7f;
+	--svant-pink-7: #e0529c;
+	--svant-pink-8: #f078b6;
+	--svant-pink-9: #f8a0cf;
+	--svant-pink-10: #fad2e3;
+
+	--svant-gray-1: #262626;
+	--svant-gray-2: #4d4d4d;
+	--svant-gray-3: #737373;
+	--svant-gray-4: #999999;
+	--svant-gray-5: #bfbfbf;
+	--svant-gray-6: #cccccc;
+	--svant-gray-7: #d9d9d9;
+	--svant-gray-8: #e6e6e6;
+	--svant-gray-9: #f2f2f2;
+	--svant-gray-10: #ffffff;
+
+	--svant-red-1-rgb-value: 42, 18, 21;
+	--svant-red-2-rgb-value: 67, 20, 24;
+	--svant-red-3-rgb-value: 88, 24, 28;
+	--svant-red-4-rgb-value: 121, 26, 31;
+	--svant-red-5-rgb-value: 166, 29, 36;
+	--svant-red-6-rgb-value: 207, 19, 34;
+	--svant-red-7-rgb-value: 232, 71, 73;
+	--svant-red-8-rgb-value: 243, 115, 112;
+	--svant-red-9-rgb-value: 248, 159, 154;
+	--svant-red-10-rgb-value: 250, 200, 195;
+
+	--svant-volcano-1-rgb-value: 43, 22, 17;
+	--svant-volcano-2-rgb-value: 68, 29, 18;
+	--svant-volcano-3-rgb-value: 89, 39, 22;
+	--svant-volcano-4-rgb-value: 124, 49, 24;
+	--svant-volcano-5-rgb-value: 170, 62, 25;
+	--svant-volcano-6-rgb-value: 216, 74, 27;
+	--svant-volcano-7-rgb-value: 232, 112, 64;
+	--svant-volcano-8-rgb-value: 243, 149, 106;
+	--svant-volcano-9-rgb-value: 248, 182, 146;
+	--svant-volcano-10-rgb-value: 250, 212, 188;
+
+	--svant-orange-1-rgb-value: 43, 29, 17;
+	--svant-orange-2-rgb-value: 68, 42, 17;
+	--svant-orange-3-rgb-value: 89, 56, 21;
+	--svant-orange-4-rgb-value: 124, 74, 21;
+	--svant-orange-5-rgb-value: 170, 98, 21;
+	--svant-orange-6-rgb-value: 250, 140, 22;
+	--svant-orange-7-rgb-value: 232, 154, 60;
+	--svant-orange-8-rgb-value: 243, 183, 101;
+	--svant-orange-9-rgb-value: 248, 207, 141;
+	--svant-orange-10-rgb-value: 250, 227, 183;
+
+	--svant-gold-1-rgb-value: 43, 33, 17;
+	--svant-gold-2-rgb-value: 68, 49, 17;
+	--svant-gold-3-rgb-value: 89, 66, 20;
+	--svant-gold-4-rgb-value: 124, 89, 20;
+	--svant-gold-5-rgb-value: 170, 119, 20;
+	--svant-gold-6-rgb-value: 250, 219, 20;
+	--svant-gold-7-rgb-value: 232, 195, 57;
+	--svant-gold-8-rgb-value: 243, 218, 98;
+	--svant-gold-9-rgb-value: 248, 230, 137;
+	--svant-gold-10-rgb-value: 250, 237, 179;
+
+	--svant-yellow-1-rgb-value: 43, 38, 17;
+	--svant-yellow-2-rgb-value: 68, 59, 17;
+	--svant-yellow-3-rgb-value: 89, 80, 20;
+	--svant-yellow-4-rgb-value: 124, 110, 20;
+	--svant-yellow-5-rgb-value: 170, 149, 20;
+	--svant-yellow-6-rgb-value: 250, 219, 20;
+	--svant-yellow-7-rgb-value: 232, 214, 57;
+	--svant-yellow-8-rgb-value: 243, 229, 98;
+	--svant-yellow-9-rgb-value: 248, 238, 137;
+	--svant-yellow-10-rgb-value: 250, 244, 179;
+
+	--svant-lime-1-rgb-value: 31, 38, 17;
+	--svant-lime-2-rgb-value: 46, 60, 16;
+	--svant-lime-3-rgb-value: 62, 79, 19;
+	--svant-lime-4-rgb-value: 83, 109, 19;
+	--svant-lime-5-rgb-value: 111, 148, 18;
+	--svant-lime-6-rgb-value: 160, 217, 17;
+	--svant-lime-7-rgb-value: 186, 230, 55;
+	--svant-lime-8-rgb-value: 211, 242, 97;
+	--svant-lime-9-rgb-value: 234, 255, 143;
+	--svant-lime-10-rgb-value: 244, 255, 184;
+
+	--svant-green-1-rgb-value: 22, 35, 18;
+	--svant-green-2-rgb-value: 29, 55, 18;
+	--svant-green-3-rgb-value: 39, 73, 22;
+	--svant-green-4-rgb-value: 48, 99, 23;
+	--svant-green-5-rgb-value: 60, 134, 24;
+	--svant-green-6-rgb-value: 73, 170, 25;
+	--svant-green-7-rgb-value: 106, 190, 57;
+	--svant-green-8-rgb-value: 143, 212, 96;
+	--svant-green-9-rgb-value: 183, 235, 143;
+	--svant-green-10-rgb-value: 217, 247, 190;
+
+	--svant-cyan-1-rgb-value: 17, 33, 35;
+	--svant-cyan-2-rgb-value: 17, 58, 62;
+	--svant-cyan-3-rgb-value: 20, 78, 82;
+	--svant-cyan-4-rgb-value: 20, 107, 111;
+	--svant-cyan-5-rgb-value: 19, 133, 133;
+	--svant-cyan-6-rgb-value: 19, 194, 194;
+	--svant-cyan-7-rgb-value: 51, 204, 204;
+	--svant-cyan-8-rgb-value: 88, 218, 218;
+	--svant-cyan-9-rgb-value: 132, 230, 230;
+	--svant-cyan-10-rgb-value: 178, 240, 240;
+
+	--svant-blue-1-rgb-value: 17, 29, 44;
+	--svant-blue-2-rgb-value: 17, 42, 69;
+	--svant-blue-3-rgb-value: 21, 57, 91;
+	--svant-blue-4-rgb-value: 22, 76, 126;
+	--svant-blue-5-rgb-value: 23, 101, 173;
+	--svant-blue-6-rgb-value: 23, 125, 220;
+	--svant-blue-7-rgb-value: 60, 154, 232;
+	--svant-blue-8-rgb-value: 101, 183, 243;
+	--svant-blue-9-rgb-value: 141, 207, 248;
+	--svant-blue-10-rgb-value: 183, 227, 250;
+
+	--svant-geekblue-1-rgb-value: 19, 22, 41;
+	--svant-geekblue-2-rgb-value: 22, 29, 64;
+	--svant-geekblue-3-rgb-value: 28, 39, 85;
+	--svant-geekblue-4-rgb-value: 32, 49, 117;
+	--svant-geekblue-5-rgb-value: 38, 62, 160;
+	--svant-geekblue-6-rgb-value: 43, 74, 203;
+	--svant-geekblue-7-rgb-value: 82, 115, 224;
+	--svant-geekblue-8-rgb-value: 127, 158, 243;
+	--svant-geekblue-9-rgb-value: 168, 193, 248;
+	--svant-geekblue-10-rgb-value: 210, 226, 250;
+
+	--svant-purple-1-rgb-value: 26, 19, 37;
+	--svant-purple-2-rgb-value: 36, 22, 58;
+	--svant-purple-3-rgb-value: 48, 28, 77;
+	--svant-purple-4-rgb-value: 62, 32, 105;
+	--svant-purple-5-rgb-value: 81, 37, 143;
+	--svant-purple-6-rgb-value: 114, 46, 209;
+	--svant-purple-7-rgb-value: 143, 93, 228;
+	--svant-purple-8-rgb-value: 179, 127, 235;
+	--svant-purple-9-rgb-value: 211, 173, 247;
+	--svant-purple-10-rgb-value: 239, 219, 255;
+
+	--svant-magenta-1-rgb-value: 41, 19, 33;
+	--svant-magenta-2-rgb-value: 64, 22, 47;
+	--svant-magenta-3-rgb-value: 85, 28, 59;
+	--svant-magenta-4-rgb-value: 117, 32, 79;
+	--svant-magenta-5-rgb-value: 160, 38, 105;
+	--svant-magenta-6-rgb-value: 196, 29, 127;
+	--svant-magenta-7-rgb-value: 224, 82, 156;
+	--svant-magenta-8-rgb-value: 240, 120, 182;
+	--svant-magenta-9-rgb-value: 248, 160, 207;
+	--svant-magenta-10-rgb-value: 250, 210, 227;
+
+	--svant-pink-1-rgb-value: 41, 19, 33;
+	--svant-pink-2-rgb-value: 64, 22, 47;
+	--svant-pink-3-rgb-value: 85, 28, 59;
+	--svant-pink-4-rgb-value: 117, 32, 79;
+	--svant-pink-5-rgb-value: 160, 38, 105;
+	--svant-pink-6-rgb-value: 196, 29, 127;
+	--svant-pink-7-rgb-value: 224, 82, 156;
+	--svant-pink-8-rgb-value: 240, 120, 182;
+	--svant-pink-9-rgb-value: 248, 160, 207;
+	--svant-pink-10-rgb-value: 250, 210, 227;
+
+	--svant-gray-1-rgb-value: 38, 38, 38;
+	--svant-gray-2-rgb-value: 77, 77, 77;
+	--svant-gray-3-rgb-value: 115, 115, 115;
+	--svant-gray-4-rgb-value: 153, 153, 153;
+	--svant-gray-5-rgb-value: 191, 191, 191;
+	--svant-gray-6-rgb-value: 204, 204, 204;
+	--svant-gray-7-rgb-value: 217, 217, 217;
+	--svant-gray-8-rgb-value: 230, 230, 230;
+	--svant-gray-9-rgb-value: 242, 242, 242;
+	--svant-gray-10-rgb-value: 255, 255, 255;
 }

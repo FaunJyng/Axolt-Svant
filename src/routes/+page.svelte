@@ -39,7 +39,7 @@
 			</div>
 			<div
 				class="col"
-				style="background-color: lightgray; padding: 0 1rem; padding-bottom: 1rem; border-radius: 6px;"
+				style="background-color: rgba(203, 203, 203, 1); padding: 0 1rem; padding-bottom: 1rem; border-radius: 6px;"
 			>
 				<h1>Ghost</h1>
 				<Button type="primary" ghost>Primary</Button>
