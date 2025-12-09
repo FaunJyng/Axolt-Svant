@@ -37,6 +37,7 @@
 		loading?: boolean;
 		iconLoading?: Snippet;
 		// Style props
+		label?: string | undefined;
 		icon?: Snippet;
 		iconPlacement?: IconPlacement;
 		block?: boolean;
@@ -67,6 +68,7 @@
 		htmlType = 'button',
 		target = undefined,
 		// Style props
+		label = undefined,
 		icon = undefined,
 		iconPlacement = 'start',
 		block = false,
@@ -84,29 +86,63 @@
 
 	let root: HTMLButtonElement | undefined = $state(undefined);
 	let svicon: HTMLSpanElement | undefined = $state(undefined);
-	let forceShowIcon: boolean = $state(true);
+	let forceLoading: boolean | undefined = $state(false);
 	let showLoading: boolean = $state(false);
 	let realMaxWidth: string;
 	let realMinWidth: string;
+	let preLabel: string | undefined = label;
 
 	onMount(async () => {
-		if (!root || !svicon) return;
+		if (!root) return;
 		ref = root;
-		realMaxWidth = getComputedStyle(root).width;
-		forceShowIcon = false;
-		await tick();
-		realMinWidth = getComputedStyle(root).width;
-		root.style.width = realMinWidth;
+
+		await computeSize();
+		if (loading) {
+			showLoading = true;
+		}
 	});
 
 	$effect(() => {
-		if (!root) return;
-		if (loading) {
-			root.style.width = realMaxWidth;
+		const _ = { loading, label };
+		if (!root || block) return;
+		if (label === preLabel) {
+			if (loading) {
+				root.style.width = realMaxWidth;
+			} else {
+				root.style.width = realMinWidth;
+			}
 		} else {
-			root.style.width = realMinWidth;
+			computeSize().then(() => {
+				if (loading) {
+					root!.style.width = realMaxWidth;
+					showLoading = true;
+				} else {
+					root!.style.width = realMinWidth;
+				}
+			});
+			preLabel = label;
 		}
 	});
+
+	async function computeSize(): Promise<void> {
+		if (!root) return;
+
+		if (!block) {
+			root.style.width = 'fit-content';
+		}
+
+		forceLoading = true;
+		await tick();
+		realMaxWidth = getComputedStyle(root).width;
+
+		forceLoading = false;
+		await tick();
+		realMinWidth = getComputedStyle(root).width;
+
+		await tick();
+		root.style.width = realMinWidth;
+		forceLoading = undefined;
+	}
 
 	function handleOntransitionend(e: TransitionEvent) {
 		if (e.propertyName === 'width') {
@@ -120,8 +156,9 @@
 </script>
 
 <button
+	bind:this={root}
 	{onclick}
-	{disabled}
+	disabled={disabled || loading}
 	type={htmlType}
 	class={[
 		'tokens',
@@ -138,17 +175,19 @@
 		'root',
 		`${icon && !children ? 'icon-only' : 'icon-label'}`,
 	]}
-	style:justify-content={!(loading || showLoading)
+	style:justify-content={!(loading || showLoading) || block
 		? 'center'
 		: iconPlacement === 'start'
 			? 'flex-end'
 			: 'flex-start'}
 	ontransitionend={handleOntransitionend}
-	bind:this={root}
 >
-	{#if children}
+	<!-- {#if children} -->
+	{#if label}
 		{#snippet content()}
-			<a {href} {target} class="content">{@render children?.()}</a>
+			<a {href} {target} class="content">
+				{label}
+			</a>
 		{/snippet}
 		{#if icon}
 			<!-- Label + Icon -->
@@ -185,13 +224,16 @@
 			<!-- Label only -->
 			{#if iconPlacement === 'end'}
 				{@render content()}
-				{#if loading || forceShowIcon}
+				{#if forceLoading !== undefined ? forceLoading : loading}
 					<span
 						bind:this={svicon}
 						class="svicon"
 						class:show-loading={showLoading}
 						class:hide-loading={!showLoading}
+						class:block-show-loading={block && loading}
+						class:block-hide-loading={block && !loading}
 					>
+						<!-- style:display={block && !loading ? 'none' : 'inline-block'} -->
 						{#if iconLoading}
 							{@const IconLoading = iconLoading}
 							<IconLoading />
@@ -201,13 +243,16 @@
 					</span>
 				{/if}
 			{:else}
-				{#if loading || forceShowIcon}
+				{#if forceLoading !== undefined ? forceLoading : loading}
 					<span
 						bind:this={svicon}
 						class="svicon"
-						class:show-loading={showLoading || loading}
-						class:hide-loading={!showLoading || !loading}
+						class:show-loading={showLoading}
+						class:hide-loading={!showLoading}
+						class:block-show-loading={block && loading}
+						class:block-hide-loading={block && !loading}
 					>
+						<!-- style:display={block && !loading ? 'none' : 'inline-block'} -->
 						{#if iconLoading}
 							{@const IconLoading = iconLoading}
 							<IconLoading />
@@ -242,36 +287,36 @@
 	.tokens {
 		/* Component tokens */
 		/* Typography */
-		--cbtn-content-font-size: 14px;
-		--cbtn-content-font-size-sm: 14px;
-		--cbtn-content-font-size-lg: 16px;
-		--cbtn-content-line-height: 1.5714285714285714;
-		--cbtn-content-line-height-sm: 1.5;
-		--cbtn-content-line-height-lg: 1.5714285714285714;
-		--cbtn-font-weight: 400;
+		--preset-btn-content-font-size: var(--svant-font-size-base);
+		--preset-btn-content-font-size-sm: var(--svant-font-size-base);
+		--preset-btn-content-font-size-lg: var(--svant-font-size-md);
+		--preset-btn-content-line-height: 1.5714285714285714;
+		--preset-btn-content-line-height-sm: 1.5;
+		--preset-btn-content-line-height-lg: 1.5714285714285714;
+		--preset-btn-font-weight: var(--svant-font-weight-regular);
 		/* Spacing */
-		--cbtn-padding-block: 4px;
-		--cbtn-padding-block-sm: 0px;
-		--cbtn-padding-block-lg: 7px;
-		--cbtn-padding-inline: 15px;
-		--cbtn-padding-inline-sm: 7px;
-		--cbtn-padding-inline-lg: 15px;
+		--preset-btn-padding-block: 4px;
+		--preset-btn-padding-block-sm: 0px;
+		--preset-btn-padding-block-lg: 7px;
+		--preset-btn-padding-inline: 15px;
+		--preset-btn-padding-inline-sm: 7px;
+		--preset-btn-padding-inline-lg: 15px;
 		/* Icon sizing */
-		--cbtn-only-icon-size: inherit;
-		--cbtn-only-icon-size-sm: inherit;
-		--cbtn-only-icon-size-lg: inherit;
+		--preset-btn-only-icon-size: inherit;
+		--preset-btn-only-icon-size-sm: inherit;
+		--preset-btn-only-icon-size-lg: inherit;
 	}
 
 	.tokens {
 		/* Rendered tokens */
 		--btn-width: fit-content;
-		--btn-font-size: var(--cbtn-content-font-size);
-		--btn-line-height: var(--cbtn-content-line-height);
-		--btn-font-weigth: var(--cbtn-font-weight);
+		--btn-font-size: var(--preset-btn-content-font-size);
+		--btn-line-height: var(--preset-btn-content-line-height);
+		--btn-font-weigtht: var(--preset-btn-font-weight);
 		--btn-icon-gap: var(--svant-padding-xs);
 
-		--btn-padding-block: var(--cbtn-padding-block);
-		--btn-padding-inline: var(--cbtn-padding-inline);
+		--btn-padding-block: var(--preset-btn-padding-block);
+		--btn-padding-inline: var(--preset-btn-padding-inline);
 
 		--btn-line-width-focus: var(--svant-line-width-focus);
 		--btn-line-color-focus: var(--svant-line-color-focus);
@@ -1101,26 +1146,26 @@
 
 	/* Size layer */
 	.size-medium {
-		--btn-font-size: var(--cbtn-content-font-size);
-		--btn-line-height: var(--cbtn-content-line-height);
-		--btn-padding-block: var(--cbtn-padding-block);
-		--btn-padding-inline: var(--cbtn-padding-inline);
+		--btn-font-size: var(--preset-btn-content-font-size);
+		--btn-line-height: var(--preset-btn-content-line-height);
+		--btn-padding-block: var(--preset-btn-padding-block);
+		--btn-padding-inline: var(--preset-btn-padding-inline);
 		--btn-border-radius: var(--svant-border-radius);
 	}
 
 	.size-small {
-		--btn-font-size: var(--cbtn-content-font-size-sm);
-		--btn-line-height: var(--cbtn-content-line-height-sm);
-		--btn-padding-block: var(--cbtn-padding-block-sm);
-		--btn-padding-inline: var(--cbtn-padding-inline-sm);
+		--btn-font-size: var(--preset-btn-content-font-size-sm);
+		--btn-line-height: var(--preset-btn-content-line-height-sm);
+		--btn-padding-block: var(--preset-btn-padding-block-sm);
+		--btn-padding-inline: var(--preset-btn-padding-inline-sm);
 		--btn-border-radius: var(--svant-border-radius-sm);
 	}
 
 	.size-large {
-		--btn-font-size: var(--cbtn-content-font-size-lg);
-		--btn-line-height: var(--cbtn-content-line-height-lg);
-		--btn-padding-block: var(--cbtn-padding-block-lg);
-		--btn-padding-inline: var(--cbtn-padding-inline-lg);
+		--btn-font-size: var(--preset-btn-content-font-size-lg);
+		--btn-line-height: var(--preset-btn-content-line-height-lg);
+		--btn-padding-block: var(--preset-btn-padding-block-lg);
+		--btn-padding-inline: var(--preset-btn-padding-inline-lg);
 		--btn-border-radius: var(--svant-border-radius-lg);
 	}
 
@@ -1141,23 +1186,28 @@
 
 	/* - Root layer */
 	.root {
+		/* svk = svant custom token */
 		position: relative;
 		display: flex;
-		column-gap: var(--btn-icon-gap);
+		column-gap: var(--svk-btn-icon-gap, var(--btn-icon-gap));
+		white-space: nowrap;
 
 		height: fit-content;
-		width: var(--btn-width);
-		padding: var(--btn-padding-block) var(--btn-padding-inline);
+		width: var(--svk-btn-width, var(--btn-width));
+		padding: var(--svk-btn-padding-block, var(--btn-padding-block))
+			var(--svk-btn-padding-inline, var(--btn-padding-inline));
 
-		font-size: var(--btn-font-size);
-		font-family: var(--svant-font-family-base);
-		line-height: var(--btn-line-height);
-		font-weight: var(--btn-font-weigth);
+		font-size: var(--svk-btn-font-size, var(--btn-font-size));
+		font-family: var(--svk-btn-font-family, var(--svant-font-family-base));
+		line-height: var(--svk-btn-line-height, var(--btn-line-height));
+		font-weight: var(--svk-btn-font-weight, var(--btn-font-weigtht));
 
-		background-color: var(--btn-bg-color);
-		color: var(--btn-text-color);
-		fill: var(--btn-text-color);
-		border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+		background-color: var(--svk-btn-bg-color, var(--btn-bg-color));
+		color: var(--svk-btn-text-color, var(--btn-text-color));
+		fill: var(--svk-btn-text-color, var(--btn-text-color));
+		border: var(--svk-btn-border-width, var(--btn-border-width))
+			var(--svk-btn-border-style, var(--btn-border-style))
+			var(--svk-btn-border-color, var(--btn-border-color));
 
 		border-radius: var(--btn-border-radius);
 		box-shadow: var(--btn-shadow-direction) var(--btn-shadow-color);
@@ -1249,7 +1299,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		transition: visibility var(--svant-motion-duration-mid) var(--svant-motion-ease-in-out);
 	}
 
 	.svicon-only {
@@ -1262,5 +1311,14 @@
 
 	.svicon.show-loading {
 		visibility: visible;
+	}
+
+	.svicon.block-show-loading {
+		visibility: visible;
+		display: flex;
+	}
+
+	.svicon.block-hide-loading {
+		display: none;
 	}
 </style>

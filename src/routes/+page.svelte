@@ -1,11 +1,29 @@
 <script lang="ts">
-	import Button from '$lib/components/general/Button.svelte';
-	import { AlertFilled } from '@axolt/svicon-ant';
+	import { Button } from '$lib/index.js';
+	let content = $state('Click');
 	let loading = $state(false);
 </script>
 
 <div class="wrapper">
-	<div class="showarea"></div>
+	<div class="showarea">
+		<div class="row">
+			<div class="col">
+				<div>-----------------------------</div>
+				<Button
+					type="primary"
+					label={content}
+					{loading}
+					onclick={() => {
+						loading = true;
+						content = 'Loading ...';
+						setTimeout(() => {
+							loading = false;
+						}, 2000);
+					}}
+				/>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>

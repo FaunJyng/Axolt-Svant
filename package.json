@@ -1,6 +1,6 @@
 {
 	"name": "@axolt/svant",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -26,12 +26,16 @@
 	],
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
+	"style": "./dist/styles/index.css",
 	"type": "module",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
+			"svelte": "./dist/index.js",
+			"style": "./dist/styles/index.css"
+		},
+		"./styles/index.css": "./dist/styles/index.css",
+		"./styles/*": "./dist/styles/*"
 	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
